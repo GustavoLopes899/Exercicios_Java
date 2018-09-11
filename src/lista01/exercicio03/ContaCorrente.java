@@ -59,6 +59,10 @@ public class ContaCorrente {
     }
 
     public void setSaldo(double saldo) {
+        if (saldo <= 0) {
+            System.out.printf("saldo incorreto.\n");
+            return;
+        }
         this.saldo = saldo;
     }
 }

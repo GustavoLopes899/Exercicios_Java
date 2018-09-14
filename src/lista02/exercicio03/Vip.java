@@ -5,7 +5,7 @@ public class Vip extends Ingresso implements InterfaceIngresso {
     private double adicional = 100;
     
     public Vip() {
-        this.setValorVip(this.getValor() + this.adicional);
+        this.setValor(this.getValor() + this.adicional);
     }
 
     @Override
@@ -19,10 +19,6 @@ public class Vip extends Ingresso implements InterfaceIngresso {
 
     public void setAdicional(double adicional) {
         this.adicional = adicional;
-    }
-    
-    private void setValorVip(double adicional) {
-        this.setValor(this.getValor() + adicional);
     }
     
     private double getValorVip() {

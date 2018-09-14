@@ -2,7 +2,11 @@ package aula05;
 
 public class Ingresso {
     
-    private double valor = 200;
+    private double valor;
+
+    public void setValor(double valor) {
+        this.valor = valor;
+    }
 
     public double getValor() {
         return valor;

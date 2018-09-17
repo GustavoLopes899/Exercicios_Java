@@ -6,6 +6,9 @@ public class Imovel {
     private double preco;
     
     public Imovel(double preco) {
+        if (preco <= 0) {
+            throw new IllegalArgumentException("Valor incorreto.");
+        }
         this.preco = preco;
     }
     

@@ -8,12 +8,11 @@ public class Novo extends Imovel {
         super(preco);
         this.adicional = adicional;
         if (adicional <= 0) {
-            System.out.println("Valor incorreto.");
-        } else {
-            this.setPreco(this.getPreco() + adicional);
+            throw new IllegalArgumentException("Valor incorreto.");
         }
+        this.setPreco(this.getPreco() + adicional);
     }
-    
+
     public double getAdicional() {
         return adicional;
     }

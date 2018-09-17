@@ -1,16 +1,15 @@
 package lista02.exercicio04;
 
 public class Velho extends Imovel {
-    
+
     private double desconto;
-    
+
     public Velho(double preco, double desconto) {
         super(preco);
         if (desconto <= 0) {
-            System.out.println("Valor incorreto.");
-        } else {
-            this.setPreco(this.getPreco() - desconto);
+            throw new IllegalArgumentException("Valor incorreto.");
         }
+        this.setPreco(this.getPreco() - desconto);
     }
 
     public double getDesconto() {

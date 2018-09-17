@@ -27,7 +27,7 @@ public class ContaCorrente {
     }
 
     public void sacar(double valor) {
-        if (valor <= 0) {
+        if (valor <= 0 || valor > this.getSaldo()) {
             throw new IllegalArgumentException("Valor incorreto.\n");
         }
         if (valor + this.saldo * 0.05 > this.saldo) {

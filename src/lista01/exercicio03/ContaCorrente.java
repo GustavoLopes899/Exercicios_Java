@@ -19,8 +19,7 @@ public class ContaCorrente {
 
     public void depositar(double valor) {
         if (valor <= 0) {
-            System.out.printf("Valor incorreto.\n");
-            return;
+            throw new IllegalArgumentException("Valor incorreto.\n");
         }
         this.saldo += valor;
         System.out.printf("Depósito efetuado com sucesso!\n");
@@ -29,8 +28,7 @@ public class ContaCorrente {
 
     public void sacar(double valor) {
         if (valor <= 0) {
-            System.out.printf("Valor incorreto.\n");
-            return;
+            throw new IllegalArgumentException("Valor incorreto.\n");
         }
         if (valor + this.saldo * 0.05 > this.saldo) {
             System.out.printf("Saldo insuficiente.\n");
@@ -60,8 +58,7 @@ public class ContaCorrente {
 
     public void setSaldo(double saldo) {
         if (saldo <= 0) {
-            System.out.printf("Saldo incorreto.\n");
-            return;
+            throw new IllegalArgumentException("Saldo incorreto.\n");
         }
         this.saldo = saldo;
     }

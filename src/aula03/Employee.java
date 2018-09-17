@@ -13,6 +13,9 @@ public class Employee {
     }
 
     public void setRaise(double raise) {
+        if (raise <= 0) {
+            throw new IllegalArgumentException("Incorrect raise.");
+        }
         this.salary += raise;
     }
     
@@ -41,6 +44,9 @@ public class Employee {
     }
 
     public void setSalary(double salary) {
+        if (salary <= 0) {
+            throw new IllegalArgumentException("Incorrect value.");
+        }
         this.salary = salary;
     }
 

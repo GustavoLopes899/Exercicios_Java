@@ -4,8 +4,7 @@ public class ConversaoDeUnidadesDeVolume {
 
     public static double litroParaCm3(double litros) {
         if (litros <= 0) {
-            System.out.printf("Valor inválido.\n");
-            return -1;
+            throw new IllegalArgumentException("Valor inválido.\n");
         }
         double cm3 = litros * 1000;
         System.out.printf("%.2f litro(s) = %.2f centímetros cúbicos.\n", litros, cm3);

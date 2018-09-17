@@ -1,23 +1,22 @@
 package lista02.exercicio01;
 
 public class Funcionario {
-    
+
     private String nome;
     private double salario;
-    
+
     public void addAumento(double aumento) {
         if (aumento <= 0) {
-            System.out.println("Valor incorreto.");
-        } else {
-            this.salario += aumento;
+            throw new IllegalArgumentException("Valor incorreto.");
         }
+        this.salario += aumento;
     }
-    
+
     public double ganhoAnual() {
         double ganhoAnual = 12 * this.salario;
         return ganhoAnual;
     }
-    
+
     public void informacoes() {
         System.out.printf("Nome: %s\n", this.nome);
         System.out.printf("Salário: R$%.2f\n", this.salario);

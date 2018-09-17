@@ -1,7 +1,7 @@
 package lista02.exercicio01;
 
 public class AssistenteTecnico extends Assistente {
-    
+
     private double bonusSalarial;
 
     public double getBonusSalarial() {
@@ -10,11 +10,10 @@ public class AssistenteTecnico extends Assistente {
 
     public void setBonusSalarial(double bonusSalarial) {
         if (bonusSalarial <= 0) {
-            System.out.println("Valor incorreto.");
-        } else {
-            this.bonusSalarial = bonusSalarial;
-            this.setSalario(this.getSalario() + bonusSalarial);
+            throw new IllegalArgumentException("Valor incorreto.");
         }
+        this.bonusSalarial = bonusSalarial;
+        this.setSalario(this.getSalario() + bonusSalarial);
     }
 
 }

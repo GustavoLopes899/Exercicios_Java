@@ -13,6 +13,8 @@ public class Conta {
     
     public void sacar(double valor) throws SaldoException {
         if (valor <= 0 || valor > this.getSaldo()) {
+            System.out.printf("O saldo atual é R$%.2f, não é possível efetuar um saque"
+                    + " de R$%.2f\n", this.getSaldo(), valor);
             throw new SaldoException();
         }
         this.setSaldo(saldo - valor);

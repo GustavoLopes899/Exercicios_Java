@@ -4,7 +4,7 @@ public class SaldoException extends Exception {
     
     @Override
     public String getMessage() {
-        return "Erro no valor inserido, tente novamente.";
+        return "Saldo insuficiente.";
     }
 
 }

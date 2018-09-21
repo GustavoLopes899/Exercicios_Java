@@ -1,9 +1,9 @@
 package lista05.exercicio05;
 
-import lista05.exercicio03.Aluno;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
+import lista05.exercicio03.Aluno;
 
 public class TesteMapaAluno {
     

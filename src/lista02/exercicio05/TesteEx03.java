@@ -1,8 +1,8 @@
 package lista02.exercicio05;
 
-import lista02.exercicio03.Ingresso;
 import java.util.Scanner;
 import lista02.exercicio03.CamaroteSuperior;
+import lista02.exercicio03.Ingresso;
 
 public class TesteEx03 {
 

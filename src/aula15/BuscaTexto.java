@@ -30,17 +30,22 @@ public class BuscaTexto extends javax.swing.JFrame {
     private void initComponents() {
 
         tf_busca = new javax.swing.JTextField();
+        lbl_texto = new javax.swing.JLabel();
         btn_pesquisar = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         ta_texto = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Buscar Texto");
+        setResizable(false);
 
         tf_busca.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tf_buscaActionPerformed(evt);
             }
         });
+
+        lbl_texto.setText("Inserir um texto abaixo:");
 
         btn_pesquisar.setText("Pesquisar");
         btn_pesquisar.addActionListener(new java.awt.event.ActionListener() {
@@ -59,12 +64,14 @@ public class BuscaTexto extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(6, 6, 6)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jScrollPane1)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(tf_busca, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(6, 6, 6)
-                        .addComponent(btn_pesquisar)))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lbl_texto)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(jScrollPane1)
+                        .addGroup(layout.createSequentialGroup()
+                            .addComponent(tf_busca, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(6, 6, 6)
+                            .addComponent(btn_pesquisar))))
                 .addGap(6, 6, 6))
         );
         layout.setVerticalGroup(
@@ -74,8 +81,10 @@ public class BuscaTexto extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(tf_busca, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btn_pesquisar))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 8, Short.MAX_VALUE)
+                .addComponent(lbl_texto)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 242, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 219, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
 
@@ -89,8 +98,10 @@ public class BuscaTexto extends javax.swing.JFrame {
     private void btn_pesquisarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_pesquisarActionPerformed
         String busca = tf_busca.getText();
         String texto = ta_texto.getText();
-        if(texto.contains(busca)) {
-            JOptionPane.showMessageDialog(null, "O texto foi encontrado.", "Busca de texto em um Text Area", JOptionPane.INFORMATION_MESSAGE);
+        if (texto.contains(busca) && !busca.equals("")) {
+            JOptionPane.showMessageDialog(null, "O texto foi encontrado.", "Busca de texto", JOptionPane.INFORMATION_MESSAGE);
+        } else {
+            JOptionPane.showMessageDialog(null, "O texto não foi encontrado.", "Busca de texto", JOptionPane.WARNING_MESSAGE);
         }
     }//GEN-LAST:event_btn_pesquisarActionPerformed
 
@@ -132,6 +143,7 @@ public class BuscaTexto extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn_pesquisar;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel lbl_texto;
     private javax.swing.JTextArea ta_texto;
     private javax.swing.JTextField tf_busca;
     // End of variables declaration//GEN-END:variables
